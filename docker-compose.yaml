@@ -1,0 +1,41 @@
+version: '3'
+services:
+  app:
+    image: go-api-starter-api
+    container_name: go-api-starter-api
+    build: .
+    ports:
+      - "3000:3000"
+    restart: on-failure
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_USER=${DB_USER:-go-api-starter-user}
+      - DB_PASS=${DB_PASS:-go-api-starter-password}
+    depends_on:
+      - db
+    networks:
+      - go-api-starter
+  db:
+    image: mysql:8
+    container_name: go-api-starter-db
+    ports:
+      - "3001:3306"
+    environment:
+      - MYSQL_USER=${DB_USER:-go-api-starter-user}
+      - MYSQL_PASSWORD=${DB_PASS:-go-api-starter-password}
+      - MYSQL_DATABASE=go-api-starter
+      - MYSQL_ROOT_PASSWORD=${DB_PASS:-go-api-starter-root}
+    volumes:
+      - go-api-starter-db:/var/lib/mysql
+    networks:
+      - go-api-starter
+    command: [ 'mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci','--default-time-zone=+00:00' ]
+
+
+volumes:
+  go-api-starter-db:
+
+networks:
+  go-api-starter:
+    driver: bridge

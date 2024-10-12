@@ -1,0 +1,24 @@
+@startuml domain
+hide circle
+skinparam linetype ortho
+skinparam packageStyle rectangle
+
+entity "User" as usr {
+    id: CHAR(36)
+    email: VARCHAR(255)
+    password_hash: VARCHAR(255)
+    first_name: TEXT
+    last_name: TEXT
+    date_joined: DATETIME
+    updated_at: DATETIME
+    __
+}
+
+entity "Document" as doc {
+    id CHAR(36)
+    content TEXT
+    --
+}
+
+usr *-> doc
+@enduml
