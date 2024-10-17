@@ -3,16 +3,16 @@ package main
 import (
 	"context"
 	"fmt"
-	"go-api-starter/cmd/api/app"
-	"go-api-starter/cmd/api/server"
+	"github.com/grocky/go-api-starter/cmd/api/app"
+	"github.com/grocky/go-api-starter/cmd/api/server"
 	"os"
 	"os/signal"
 	"runtime/debug"
 	"strconv"
 	"syscall"
 
-	"go-api-starter/internal/log"
-	"go-api-starter/internal/mysql"
+	"github.com/grocky/go-api-starter/internal/log"
+	"github.com/grocky/go-api-starter/internal/mysql"
 )
 
 const appName = "go-api-starter"

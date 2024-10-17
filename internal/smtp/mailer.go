@@ -5,8 +5,8 @@ import (
 	"html/template"
 	"time"
 
-	"go-api-starter/assets"
-	"go-api-starter/internal/funcs"
+	"github.com/grocky/go-api-starter/assets"
+	"github.com/grocky/go-api-starter/internal/funcs"
 
 	"github.com/go-mail/mail/v2"
 )

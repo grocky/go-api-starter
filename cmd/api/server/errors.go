@@ -2,9 +2,9 @@ package server
 
 import (
 	"fmt"
-	"go-api-starter/cmd/api/response"
-	"go-api-starter/internal/log"
-	"go-api-starter/internal/validator"
+	"github.com/grocky/go-api-starter/cmd/api/response"
+	"github.com/grocky/go-api-starter/internal/log"
+	"github.com/grocky/go-api-starter/internal/validator"
 	"net/http"
 	"runtime/debug"
 )

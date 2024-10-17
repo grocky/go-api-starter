@@ -11,7 +11,7 @@ import (
 
 	"github.com/hashicorp/go-multierror"
 
-	"go-api-starter/internal/log"
+	"github.com/grocky/go-api-starter/internal/log"
 )
 
 const (

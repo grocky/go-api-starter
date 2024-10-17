@@ -3,12 +3,12 @@ package app
 import (
 	"context"
 	"github.com/gorilla/mux"
-	"go-api-starter/cmd/api/middleware"
-	"go-api-starter/cmd/api/response"
-	"go-api-starter/cmd/api/server"
-	"go-api-starter/internal/log"
-	"go-api-starter/internal/mysql"
-	"go-api-starter/internal/version"
+	"github.com/grocky/go-api-starter/cmd/api/middleware"
+	"github.com/grocky/go-api-starter/cmd/api/response"
+	"github.com/grocky/go-api-starter/cmd/api/server"
+	"github.com/grocky/go-api-starter/internal/log"
+	"github.com/grocky/go-api-starter/internal/mysql"
+	"github.com/grocky/go-api-starter/internal/version"
 	"net/http"
 	"sync"
 )

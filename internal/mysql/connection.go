@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/go-sql-driver/mysql"
-	"go-api-starter/internal/log"
+	"github.com/grocky/go-api-starter/internal/log"
 	"net/url"
 	"regexp"
 	"time"

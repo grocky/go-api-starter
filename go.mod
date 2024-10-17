@@ -1,4 +1,4 @@
-module go-api-starter
+module github.com/grocky/go-api-starter
 
 go 1.22.5
 

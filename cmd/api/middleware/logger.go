@@ -2,7 +2,7 @@ package middleware
 
 import (
 	"github.com/gorilla/mux"
-	"go-api-starter/internal/log"
+	"github.com/grocky/go-api-starter/internal/log"
 	"net/http"
 )
 

@@ -2,7 +2,7 @@ package middleware
 
 import (
 	"context"
-	"go-api-starter/internal/log"
+	"github.com/grocky/go-api-starter/internal/log"
 	"net/http"
 
 	"github.com/google/uuid"
