@@ -50,7 +50,7 @@ server-run:
 	go run ./cmd/api
 
 server/run: ## run the server with live reload enabled
-	@echo "$(SOURCE_FILES)" | tr " " "\n" | entr -r make server-run
+	./scripts/live-reload.sh "make server-run"
 
 server/run-bin: $(TARGET) ## run the binary
 	@DB_HOST=127.0.0.1 \
