@@ -4,7 +4,7 @@ variable "schema_src" {
 }
 
 variable "port" {
-  type string
+  type = string
   default = getenv("DB_PORT")
 }
 
@@ -20,6 +20,6 @@ variable "pass" {
 
 env "local" {
   src = var.schema_src
-  url = "mysql://go-api-starter-user:go-api-starter-password@localhost:${port}"
+  url = "mysql://go-api-starter-user:go-api-starter-password@localhost:${var.port}"
   dev = "docker://mysql/8"
 }
