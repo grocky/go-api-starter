@@ -3,14 +3,14 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/grocky/go-api-starter/cmd/api/app"
-	"github.com/grocky/go-api-starter/cmd/api/server"
 	"os"
 	"os/signal"
 	"runtime/debug"
 	"strconv"
 	"syscall"
 
+	"github.com/grocky/go-api-starter/cmd/api/app"
+	"github.com/grocky/go-api-starter/cmd/api/server"
 	"github.com/grocky/go-api-starter/internal/log"
 	"github.com/grocky/go-api-starter/internal/mysql"
 )
@@ -43,7 +43,7 @@ func main() {
 		logger.Error(err.Error(), "stack", debug.Stack())
 		os.Exit(2)
 	}
-	logger.Info("successful shutdown")
+	logger.Warn("successful shutdown")
 }
 
 type config struct {

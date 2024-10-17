@@ -63,11 +63,11 @@ func (s *Server) ServeHTTP(ctx context.Context, srv *http.Server) error {
 	go func() {
 		<-ctx.Done()
 
-		logger.Debug("context closed")
+		logger.Warn("context closed")
 		shutdownCtx, done := context.WithTimeout(context.Background(), 5*time.Second)
 		defer done()
 
-		logger.Debug("shutting down")
+		logger.Warn("shutting down")
 		errCh <- srv.Shutdown(shutdownCtx)
 	}()
 
@@ -76,7 +76,7 @@ func (s *Server) ServeHTTP(ctx context.Context, srv *http.Server) error {
 		return fmt.Errorf("failed to serve: %w", err)
 	}
 
-	logger.Debug("serving stopped")
+	logger.Warn("serving stopped")
 
 	var merr *multierror.Error
 
