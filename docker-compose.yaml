@@ -5,7 +5,7 @@ services:
     container_name: go-api-starter-api
     build: .
     ports:
-      - "3000:3000"
+      - "3000-3009:3000"
     restart: on-failure
     environment:
       - DB_HOST=db
@@ -20,7 +20,7 @@ services:
     image: mysql:8
     container_name: go-api-starter-db
     ports:
-      - "3001:3306"
+      - "3010-3019:3306"
     environment:
       - MYSQL_USER=${DB_USER:-go-api-starter-user}
       - MYSQL_PASSWORD=${DB_PASS:-go-api-starter-password}

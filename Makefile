@@ -3,6 +3,8 @@ PROJECT_NAME := $(shell basename $(CURDIR))
 
 SOURCE_FILES := $(shell find . -name '*.go')
 
+DB_PORT := $(shell docker-compose ps db --format json | jq ".[0].Publishers[] | select(.TargetPort == 3306) | .PublishedPort" || 3306)
+
 help: ## print this help message
 	@awk -F ':|##' '/^[^\t].+?:.*?##/ { printf "${GREEN}%-20s${RESET}%s\n", $$1, $$NF }' $(MAKEFILE_LIST)
 
@@ -42,7 +44,7 @@ build: $(TARGET) $(TARGET_LINUX_AMD64) ## build the cmd/api application
 
 server-run:
 	@DB_HOST=127.0.0.1 \
-	DB_PORT=3001 \
+	DB_PORT=$(DB_PORT) \
 	DB_USER=go-api-starter-user \
 	DB_PASS=go-api-starter-password \
 	go run ./cmd/api
@@ -52,7 +54,7 @@ server/run: ## run the server with live reload enabled
 
 server/run-bin: $(TARGET) ## run the binary
 	@DB_HOST=127.0.0.1 \
-	DB_PORT=3001 \
+	DB_PORT=$(DB_PORT) \
 	DB_USER=go-api-starter-user \
 	DB_PASS=go-api-starter-password \
 	./$(TARGET)
@@ -67,7 +69,7 @@ server/run-bin: $(TARGET) ## run the binary
 # ==================================================================================== #
 
 db/apply: ## Apply DB schema changes
-	atlas schema apply --env local
+	DB_PORT=$(DB_PORT) atlas schema apply --env local
 
 # ==================================================================================== #
 # HELPERS
