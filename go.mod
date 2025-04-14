@@ -1,6 +1,7 @@
 module github.com/grocky/go-api-starter
 
 go 1.23
+toolchain go1.24.1
 
 require (
 	github.com/go-mail/mail/v2 v2.3.0
@@ -9,9 +10,9 @@ require (
 	github.com/gorilla/mux v1.8.1
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/jmoiron/sqlx v1.4.0
-	golang.org/x/crypto v0.28.0
+	golang.org/x/crypto v0.35.0
 	golang.org/x/exp v0.0.0-20241009180824-f66d83c29e7c
-	golang.org/x/text v0.19.0
+	golang.org/x/text v0.22.0
 )
 
 require (
